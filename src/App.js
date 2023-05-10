@@ -6,11 +6,13 @@ import Footer from './Component/Footer';
 import Test from './Component/Test';
 
 
+
 function App() {
   return (
     <div>
       <Header />
       <Test name="ilham"/>
+      
       <Footer/>
     </div>
   );

@@ -1,13 +1,13 @@
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import React, { useState } from 'react'
-import { useTransition,animated } from 'react-spring'
+import {useTransition, animated} from 'react-spring'
 
+  
 
 function Navigation(){
     const [showMenu, setShowMenu] = useState(false)
 
-    
     const maskTransitions = useTransition(showMenu, null, {
         from: { position: 'absolute', opacity: 0 },
         enter: { opacity: 1 },
@@ -28,7 +28,7 @@ function Navigation(){
                     onClick={() => setShowMenu(!showMenu)}
                 />
             </span>
-           
+
             {
                 maskTransitions.map(({ item, key, props }) =>
                     item && 
@@ -42,7 +42,7 @@ function Navigation(){
                 )
             }
 
-{
+            {
                 menuTransitions.map(({ item, key, props }) =>
                     item && 
                     <animated.div 
@@ -50,13 +50,7 @@ function Navigation(){
                         style={props}
                         className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3"
                     >
-                       <span>
-                         menu
-                       </span>
-                       <ul>
-                           <li> home
-                            </li> 
-                       </ul>
+                        
                     </animated.div>
                 )
             }
